@@ -1,0 +1,172 @@
+.actor {
+    margin: 30px 0;
+
+    @include tablet {
+        margin: 10px 0;
+    }
+
+    &__title {
+        font-size: 30px;
+        text-align:left;
+        color: #fff;
+        margin-bottom: 30px;
+
+        @include tablet {
+            text-align: center;
+        }
+        @include mobile {
+            font-size: calc(5vw + 7px);
+            margin-bottom: 15px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__img{
+        height: 35vw;
+        width: 25vw;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border-radius: 20px;
+
+        @include tablet {
+            height: 55vw;
+            width: 40vw;
+            margin-bottom: 10px;
+        }
+
+        @include mobile {
+            height: 70vw;
+            width: 50vw;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+
+        @include mobile {
+            font-size: calc(3vw + 4px);
+        }
+
+        @media (max-width: 350px) {
+            font-size: calc(4vw + 2px);
+            margin-bottom: 5px;
+        }
+    }
+
+    &__filmography {
+        margin-left: 50px;
+
+        @include tablet {
+            width: 100%;
+            margin-left: 0;
+           margin-top: 30px;
+        }
+    }
+
+    &__filmography-title {
+        color: #fff;
+        font-size: 25px;
+        margin-bottom: 30px;
+
+        @include tablet {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        @include mobile {
+            font-size: calc(4vw + 2px);
+        }
+    }
+
+    &__filmography-list {
+        display: flex;
+        justify-content: center;
+
+        @include tablet {
+            width: 100%;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__filmography-item{
+        margin-right: 30px;
+        height: 18vw;
+        width: 12vw;
+
+        @include tablet {
+            height: 30vw;
+            width: 20vw;
+            margin-right: 0;
+        }
+
+        @include mobile {
+            margin-right: 0;
+            height: 30vw;
+            width: 20vw;
+        }
+    }
+
+    &__filmography-link {
+        text-decoration: none;
+
+    }
+
+    &__item-img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        object-fit: cover;
+
+        @include mobile {
+            border-radius: 10px;
+        }
+    }
+
+    &__item-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 5px;
+    }
+
+
+    &__item-title {
+        color: #fff;
+        font-size: 15px;
+
+        @include mobile {
+            font-size: calc(2vw + 4px);
+        }
+    }
+
+    &__item-rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        color: #fff;
+
+        @include mobile {
+            width: 20px;
+            height: 20px;
+            font-size: calc(2vw + 4px);
+        }
+    }
+}

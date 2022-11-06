@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+.header {
+    height: 60px;
+    background-color: #101011;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+
+    @include tablet {
+        background-color: #000;
+    }
+
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+
+        @include tablet {
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        text-transform: uppercase;
+        font-family: "Nabla";
+        font-size: 18px;
+        text-decoration: none;
+        width: 100px;
+
+        @include tablet {
+            font-size: 15px;
+        }
+
+        @include mobile {
+            width: 70px;
+            font-size: 13px;
+            margin-right: 0;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(100% - 100px);
+
+        @include tablet {
+            justify-content: flex-end;
+        }
+
+    }
+
+    &__navigation {
+        animation: 0.3s show ease;
+        transition: 0.3s;
+
+        @include tablet {
+           position: absolute;
+            top: 48px;
+            width: 101%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            z-index: 200;
+            background-color: black;
+        }
+    }
+
+    @keyframes show {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+    &__navigation-link {
+        color: #969696;
+        margin-right: 40px;
+        font-size: 17px;
+        transition: 0.1s;
+        text-decoration: none;
+
+        @include tablet {
+            margin-bottom: 15px;
+    }
+}
+
+    &__navigation-link:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__search-logo{
+        width: 25px;
+        height: 25px;
+    }
+
+    &__search-logo:hover{
+        cursor: pointer;
+    }
+
+    &__search-close {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 100;
+        z-index: 1;
+    }
+
+    &__search-input{
+        height: 55px;
+        border: none;
+        position: absolute;
+        font-size: 16px;
+        letter-spacing: 1px;
+        left: 100px;
+        width: 95%;
+        background-color: #101011;
+        color: #fff;
+        outline: none;
+        padding-left: 50px;
+
+        @include tablet {
+            top: 46px;
+            padding-left: 0;
+            background-color: #000;
+            left: 0;
+            right: 0;
+        }
+
+        @include mobile {
+            font-size: calc(3vw + 5px);
+        }
+    }
+
+    &__search-input::placeholder {
+        letter-spacing: 1px;
+    }
+
+    &__search-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__burger{
+        width: 25px;
+        height: 25px;
+        display: none;
+        margin-left: 20px;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__burger:hover {
+        cursor: pointer;
+    }
+}

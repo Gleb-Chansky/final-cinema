@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600&display=swap');
+body {
+    font-family: "Nunito Sans";
+    font-weight: 400;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+button:focus {
+    opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+div#app{
+    position: relative;
+}
+
+.visible{
+    display: flex!important;
+}
+
+.invisible{
+    display: none!important;
+}
+
+.sticky {
+    height: 100vh;
+    overflow: hidden;
+}
