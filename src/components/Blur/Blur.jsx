@@ -68,7 +68,11 @@ export const ActorItem = (item, click) => {
   return (
     <li className="blur__item">
       <Link to={`/actor/${actor.name}`} className="blur__link" onClick={click}>
-        <img src={actor.img} alt="actor photo" className="blur__link-img" />
+        <img
+          src={`/static/${actor.name}.jpg`}
+          alt="actor photo"
+          className="blur__link-img"
+        />
         <h1 className="blur__link-title">{actor.name}</h1>
       </Link>
     </li>
@@ -80,7 +84,11 @@ export const FilmItem = (item, click) => {
   return (
     <li className="blur__item">
       <Link to={`/movie/${film.title}`} className="blur__link" onClick={click}>
-        <img src={film.image} alt="film photo" className="blur__link-img" />
+        <img
+          src={`/static/${film.title}.jpg`}
+          alt="film photo"
+          className="blur__link-img"
+        />
         <h1 className="blur__link-title">{film.title}</h1>
       </Link>
     </li>

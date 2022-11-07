@@ -27,7 +27,7 @@
 
         @include mobile {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
     }
 
@@ -50,13 +50,5 @@
     }
     &__link-img{
         width: 30px;
-
-        @include tablet {
-            width: 25px;
-        }
-
-        @include mobile {
-            width: 20px;
-        }
     }
 }

@@ -17,7 +17,7 @@ export const ActorItem = ({ actor }) => {
     <li className="content__item">
       <Link to={`/actor/${actor.name}`}>
         <img
-          src={`${actor.img}`}
+          src={`/static/${actor.name}.jpg`}
           alt="movie image"
           className="content__item-img"
         />

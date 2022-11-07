@@ -49,7 +49,7 @@ export const MoviePage = () => {
                 <div className="movie__item" key={index}>
                   <div className="movie__img-wrapper">
                     <img
-                      src={`${el.image}`}
+                      src={`/static/${el.title}.jpg`}
                       alt="movie image"
                       className="movie__img"
                     />
@@ -128,7 +128,7 @@ export const ActorLink = ({ actors }) => {
           <Link to={`/actor/${actor.name}`} className="movie__actor-link">
             <li className="movie__actor-item">
               <img
-                src={`${actor.img}`}
+                src={`/static/${actor.name}.jpg`}
                 alt="actor photo"
                 className="movie__actor-img"
               />

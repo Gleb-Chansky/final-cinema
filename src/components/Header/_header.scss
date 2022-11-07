@@ -32,12 +32,11 @@
         width: 100px;
 
         @include tablet {
-            font-size: 15px;
+            font-size: 20px;
+            width: 200px;
         }
 
         @include mobile {
-            width: 70px;
-            font-size: 13px;
             margin-right: 0;
         }
     }
@@ -83,7 +82,7 @@
         text-decoration: none;
 
         @include tablet {
-            margin-bottom: 15px;
+            margin-bottom: 19px;
     }
 }
 

@@ -2,7 +2,7 @@
     position: absolute;
     top: 60px;
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100vh;
     z-index: 100;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -53,6 +53,8 @@
       @include tablet {
         height: calc(100vh - 160px);
         width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
       }
     } 
 
@@ -63,6 +65,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex-shrink: 0;
 
       @include tablet {
         width: 100%;
@@ -102,6 +105,7 @@
       border-radius: 20px;
       object-fit: cover;
       overflow: hidden;
+      flex-shrink: 0;
 
       @media (max-width:1075px){
 
@@ -133,12 +137,12 @@
       margin-top: 10px;
 
       @include tablet {
-        font-size: calc(1vw + 8px);
+        font-size: calc(2vw + 6px);
         margin-top: 0;
         text-align: left;
       }
       @include mobile {
-        font-size: calc(2vw + 5px);
+        font-size: calc(3vw + 5px);
       }
 
       @media (max-width:300px) {

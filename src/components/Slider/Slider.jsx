@@ -22,7 +22,7 @@ export const Slider = ({ genre }) => {
                   <img
                     className="slider__item-img"
                     key={index}
-                    src={`${el.image}`}
+                    src={`/static/${el.title}.jpg`}
                     alt="photo"
                   />
                 </Link>

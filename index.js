@@ -9,7 +9,8 @@ const database = client.db().collection("films");
 const app = express();
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname + "/public")));
-
+app.use("/static", express.static(path.resolve(__dirname + "/public/films")));
+app.use("/static", express.static(path.resolve(__dirname + "/public/actors")));
 app.get("/sliders", async (req, res) => {
   const result = [];
   await client.connect();

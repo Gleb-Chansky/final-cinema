@@ -46,7 +46,11 @@ export const ActorPage = () => {
           <h1 className="actor__title">{name}</h1>
           <div className="actor__wrapper">
             <div className="actor__data">
-              <img src={actor.img} alt="actor photo" className="actor__img" />
+              <img
+                src={`/static/${actor.name}.jpg`}
+                alt="actor photo"
+                className="actor__img"
+              />
               <p className="actor__text">Born : {actor.born}</p>
               <p className="actor__text">Activity : {actor.activity}</p>
             </div>
@@ -69,7 +73,11 @@ export const FilmLink = ({ film }) => {
   return (
     <li className="actor__filmography-item">
       <Link to={`/movie/${film.title}`} className="actor__filmography-link">
-        <img src={film.image} alt="movie image" className="actor__item-img" />
+        <img
+          src={`/static/${film.title}.jpg`}
+          alt="movie image"
+          className="actor__item-img"
+        />
         <div className="actor__item-wrapper">
           <h1 className="actor__item-title">{film.title}</h1>
           <span
