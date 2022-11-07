@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-const { innerHeight: height } = window;
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -24,4 +23,3 @@ export const useWindowDimensions = () => {
 
   return windowDimensions;
 };
-document.documentElement.style.setProperty("--vh", `${height}px`);
