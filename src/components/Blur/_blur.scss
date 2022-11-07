@@ -46,15 +46,16 @@
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      overflow-y: scroll;
       width: 75vw;
       align-items: baseline;
 
       @include tablet {
         height: calc(100vh - 160px);
+        flex-wrap: nowrap;
         width: 100%;
         flex-direction: column;
         justify-content: flex-start;
+        overflow-x: scroll;
       }
     } 
 
