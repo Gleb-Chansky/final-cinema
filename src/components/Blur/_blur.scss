@@ -13,6 +13,10 @@
       height: calc(100% - 95px);
     }
 
+    @include mobile {
+      height: 100vh;
+    }
+
     &__wrapper {
       width: 100%;
       display: flex;
