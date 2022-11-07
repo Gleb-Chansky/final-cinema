@@ -10,11 +10,7 @@
 
     @include tablet {
       top:100px;
-      height: calc(100% - 95px);
-    }
-
-    @include mobile {
-      height: 100vh;
+      height: calc(100vh - 80px);
     }
 
     &__wrapper {
