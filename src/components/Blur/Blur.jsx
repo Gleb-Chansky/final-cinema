@@ -45,7 +45,7 @@ export const Blur = () => {
                       return (
                         <ActorItem
                           key={index}
-                          actor={el.actors[0]}
+                          actor={el._id}
                           click={handleClick}
                         />
                       );

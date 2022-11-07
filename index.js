@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname + "/public")));
 app.use("/static", express.static(path.resolve(__dirname + "/public/films")));
 app.use("/static", express.static(path.resolve(__dirname + "/public/actors")));
+
 app.get("/sliders", async (req, res) => {
   const result = [];
   await client.connect();
@@ -59,36 +60,24 @@ app.get("/getnewest", async (req, res) => {
 });
 
 app.get("/getactors", async (req, res) => {
-  const data = [];
-  const result = [];
   await client.connect();
 
   const actors = await database
-    .find(
+    .aggregate([
       {
-        actors: {
-          $elemMatch: {
-            name: { $exists: true },
-          },
+        $unwind: { path: "$actors" },
+      },
+      {
+        $group: {
+          _id: "$actors",
         },
       },
-      { projection: { "actors.$": 1, name: 1, _id: 0 } }
-    )
+    ])
     .toArray();
-  actors.forEach((el) => {
-    if (!data.find((actor) => actor.actors[0].name == el.actors[0].name)) {
-      data.push(el);
-    }
-  });
-
-  data.forEach((el) => {
-    result.push(el.actors[0]);
-  });
-  res.send(result);
+  res.send(actors);
 });
 
 app.post("/search", async (req, res) => {
-  const data = [];
   const result = [];
   await client.connect();
   const regexp = new RegExp("^.*" + req.body.value + ".*$", "i");
@@ -101,27 +90,41 @@ app.post("/search", async (req, res) => {
     )
     .toArray();
 
-  const actorsList = await database
-    .find(
+  const actors = await database
+    .aggregate([
       {
-        "actors.name": { $regex: regexp },
-        actors: {
-          $elemMatch: {
-            name: regexp,
-          },
+        $unwind: { path: "$actors" },
+      },
+      {
+        $group: {
+          _id: "$actors",
         },
       },
-      { projection: { "actors.$": 1, name: 1, _id: 0 } }
-    )
+      {
+        $match: { "_id.name": regexp },
+      },
+    ])
     .toArray();
+  // const actorsList = await database
+  //   .find(
+  //     {
+  //       "actors.name": { $regex: regexp },
+  //       actors: {
+  //         $elemMatch: {
+  //           name: regexp,
+  //         },
+  //       },
+  //     },
+  //     { projection: { "actors.$": 1, name: 1, _id: 0 } }
+  //   )
+  //   .toArray();
 
-  actorsList.forEach((el) => {
-    if (!data.find((actor) => actor.actors[0].name == el.actors[0].name)) {
-      data.push(el);
-    }
-  });
-
-  result.push(movies, data);
+  // actorsList.forEach((el) => {
+  //   if (!data.find((actor) => actor.actors[0].name == el.actors[0].name)) {
+  //     data.push(el);
+  //   }
+  // });
+  result.push(movies, actors);
   res.send(result);
 });
 

@@ -45,6 +45,8 @@
         align-items: center;
         
         @include mobile {
+            width: 70%;
+            justify-content: space-around;
             margin-bottom: 10px;
         }
     }

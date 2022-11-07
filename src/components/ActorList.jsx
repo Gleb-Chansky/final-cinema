@@ -5,7 +5,7 @@ export const ActorList = ({ result, param }) => {
       <h1 className="content__page-title">{param}</h1>
       <ul className="content__page-list">
         {result.map((data) => {
-          return <ActorItem actor={data} key={data._id} />;
+          return <ActorItem actor={data._id} key={data._id} />;
         })}
       </ul>
     </div>
@@ -18,7 +18,7 @@ export const ActorItem = ({ actor }) => {
       <Link to={`/actor/${actor.name}`}>
         <img
           src={`/static/${actor.name}.jpg`}
-          alt="movie image"
+          alt="actor image"
           className="content__item-img"
         />
         <div className="content__item-description">
