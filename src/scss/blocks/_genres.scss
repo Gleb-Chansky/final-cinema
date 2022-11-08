@@ -16,13 +16,13 @@
 
     &__list-item {
         margin:10px;
-        max-width: 180px;
+        min-width: 180px;
         height: 40px;
         border-radius: 10px;
         border: 1px solid #fff;
 
         @include tablet {
-            max-width: 100px;
+            min-width: 100px;
             height: 30px;
         }
     }
