@@ -99,20 +99,6 @@
       },
       {
       "actors": [],
-      "directors": ["Simon Ardizzone"],
-      "writers": ["Simon Ardizzone"],
-      "_id": "61e8e265049901356f74de47",
-      "image": "https://m.media-amazon.com/images/M/MV5BZDcwMWUwZjItM2I5NS00ZmNhLTk3MzItMGRiMWZlY2I3Y2MwXkEyXkFqcGdeQXVyODIwODA5Njk@._V1_FMjpg_UX1000_.jpg",
-      "title": "Kill Chain- The Cyber War on America's Elections",
-      "rating": 7.6,
-      "year": 2020,
-      "description": "The film reveals the hacking attack on the presidential election in 2016, through the exclusive on-camera interview with the hacker known as CyberZeist. CyberZeist penetrated the Alaska Division Of Elections' state vote tabulation computer system on 6 and 7 November 2016, and on election day, 8 November 2016.",
-      "genres": ["documental"],
-      "countries": ["usa"],
-      "release": "2020.03.26"
-      },
-      {
-      "actors": [],
       "directors": ["Kirsten Johnson"],
       "writers": ["Kirsten Johnson"],
       "_id": "61e8e508049901356f74e238",

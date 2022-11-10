@@ -105,25 +105,6 @@ app.post("/search", async (req, res) => {
       },
     ])
     .toArray();
-  // const actorsList = await database
-  //   .find(
-  //     {
-  //       "actors.name": { $regex: regexp },
-  //       actors: {
-  //         $elemMatch: {
-  //           name: regexp,
-  //         },
-  //       },
-  //     },
-  //     { projection: { "actors.$": 1, name: 1, _id: 0 } }
-  //   )
-  //   .toArray();
-
-  // actorsList.forEach((el) => {
-  //   if (!data.find((actor) => actor.actors[0].name == el.actors[0].name)) {
-  //     data.push(el);
-  //   }
-  // });
   result.push(movies, actors);
   res.send(result);
 });
